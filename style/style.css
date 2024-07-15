@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+
+/*unidades de medida
+    1em=30px --al ser complicado el calculo se prefiere no usar se una rem
+    
+    rem
+    1rem=16px --siempre va a equivaler a lo mismo
+
+    %
+    100=16px 
+
+*/
+:root{/* se declaran variables */
+    --color-primario:#000000;
+    --color-secundario:#f6f6f6; 
+    --color-terciario:#22D4FD;
+    --color-hover:#272727;
+
+    --fuente-montserrat:'Montserrat', sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin:0;
+}/*Reset CSS, para que en todos los navegadores se visualice de la misma manera el contenido*/
+
+body{
+    background-color: var(--color-primario);
+    color:var(--color-secundario);
+    /*height: 100vh;*/ /* ocupe toda la pantalla*/
+    box-sizing: border-box; /* se usa para que el elemento "no se salga de la pantalla" es decir, le coloca un limite al elemento*/
+}
+.header{
+    padding: 2% 0% 0% 15%; /*Cuando se especifican cuatro valores, los rellenos se aplican a la parte de arriba, derecha, abajo e izquierda en ese orden (en el sentido de las agujas del reloj).*/
+}
+
+.header_menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header_menu_link{
+    font-family:var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.Presentacion{
+    display: flex; /* contenedor flexible Tenga en cuenta que las columnas CSS no tienen ningún efecto en un contenedor flexible.*/
+    align-items: center; /*alinea los elementos, los elementos están centrados en el eje transversal*/
+    justify-content: space-between; /*justifica el contenido, con space-between se distribuye uniformemente en línea El primer elemento está en la línea de inicio, el último elemento en la línea de final.*/
+    /*margin: 5%;*/ /* margen. establece el margen para los cuatro lados.*/
+    padding: 5% 15%;
+    gap: 82px;
+}
+
+.Presentacion_contenido{
+    width: 50%; /* ancho del espacio a usar, si solo se coloca el ancho lo toma para el alto tambien*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*controla explícitamente el espacio entre elementos flexibles.*/
+
+}
+.Presentacion_contenido_titulo{
+    font-family: var(--fuente-krona);
+    font-size: 2.25rem;
+}
+
+.titulo-destaque{  /*obtenemos la clase siempre se usa el '.' para saber que es una clase */
+    color:var(--color-terciario);
+}
+
+.Presentacion_contenido_texto{
+    font-family: var(--fuente-montserrat); /* le damos una fuente de texto al contenido*/
+    font-size: 1.5rem; /* tamaño del texto */
+}
+
+.Presentacion_enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center; /*se usa align cuando se esta en el eje vertical (column)*/
+    gap: 32px;
+}
+
+.Presentacion_enlaces_subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+.Presentacion_enlaces_link{
+
+    display: flex;
+    justify-content: center; /*se usa justify si se esta en el eje horizontal (row) */
+    gap:16px; /*espacio entre elementos*/
+    border:2px solid var(--color-terciario); /*borde del elemento, se especifica el tamaño y el tipo de borde*/
+    width: 50%;
+    text-align: center; /*alinear el texto*/
+    border-radius: 8px; /*radio del borde*/
+    font-size: 1.5rem;
+    font-weight: 600; /*especifica el peso o grueso de la letra, Poner texto a dos pasos más oscuro que lo
+    normal pero menos que una negrita estándar. */
+    padding: 21.5px 0;/*es responsable de definir la distancia entre un contenido y sus bordes. establece el área de relleno en los cuatro lados de un elemento a la vez. Arriba y abajo:21.5px  de relleno. izquierda y derecha: 0px  de relleno */
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+    
+}
+
+
+.Presentacion_enlaces_link:hover{
+    cursor: pointer;/*cambia el el estilo del cursor a una mano con el dedo índice levantado al pasar el mouse por encima*/
+    background-color: var(--color-hover);
+}
+
+.Presentacion_imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color:var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+@media (max-width:1200px){/*define un punto de quiebre para pantallas con un ancho de hasta 1200 píxeles, asegurando que los estilos dentro de esta consulta se apliquen a dispositivos con un ancho igual o inferior a 1200 píxeles.*/
+.header{
+    padding: 10%;
+}
+.header_menu{
+    justify-content: center;
+}
+.Presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+}
+.Presentacion_contenido{
+        width: auto; /* ancho del espacio a usar, si solo se coloca el ancho lo toma para el alto tambien*/
+}
+}
